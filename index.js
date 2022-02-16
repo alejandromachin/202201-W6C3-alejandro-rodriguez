@@ -1,13 +1,15 @@
 require("dotenv").config();
 const debug = require("debug")("calculator:root");
 const { program } = require("commander");
+const http = require("http");
 
-program.option("--a <number>");
-program.option("--b <number>");
+const server = http.createServer();
+const portDefault = process.env.SERVER_PORT || 3002;
+
+program.option("--port <number>");
 
 program.parse();
 
-const { a, b } = program.opts();
+const { port } = program.opts();
 
-debug(a);
-debug(b);
+debug(port);
