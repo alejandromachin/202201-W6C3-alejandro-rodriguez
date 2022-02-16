@@ -10,6 +10,26 @@ program.option("--port <number>");
 
 program.parse();
 
-const { port } = program.opts();
+let { port } = program.opts();
 
-debug(port);
+console.log(port);
+
+if (port === undefined) {
+  port = portDefault;
+}
+
+server.listen(port, () => {
+  debug(`Server is up in http://http://localhost:${port}`);
+});
+
+// if (portGivenByUser === undefined) {
+//   const port = portDefault;
+// // }
+// if (portGivenByUser !== undefined) {
+//   server.listen(portGivenByUser, () => {
+//     debug(`Server is up in http://http://localhost:${portGivenByUser}`);
+//   });
+// } else {
+//   server.listen(portDefault, () => {
+//     debug(`Server is up in http://http://localhost:${portDefault}`);
+//   });
