@@ -12,8 +12,6 @@ program.parse();
 
 let { port } = program.opts();
 
-console.log(port);
-
 if (port === undefined) {
   port = portDefault;
 }
@@ -21,15 +19,3 @@ if (port === undefined) {
 server.listen(port, () => {
   debug(`Server is up in http://http://localhost:${port}`);
 });
-
-// if (portGivenByUser === undefined) {
-//   const port = portDefault;
-// // }
-// if (portGivenByUser !== undefined) {
-//   server.listen(portGivenByUser, () => {
-//     debug(`Server is up in http://http://localhost:${portGivenByUser}`);
-//   });
-// } else {
-//   server.listen(portDefault, () => {
-//     debug(`Server is up in http://http://localhost:${portDefault}`);
-//   });
