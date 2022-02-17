@@ -46,7 +46,6 @@ server.on("request", (request, response) => {
     response.write(
       "<h1>Please, you have to enter two numbers <br>following the next example: http://localhost:3002/calculator?a=6&b=3 </h1>"
     );
-    process.exit();
   } else {
     response.statusCode = 200;
     response.write(`<h1>HI! THIS ARE THE RESULTS:</h1><br> 
